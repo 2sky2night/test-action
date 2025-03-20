@@ -5,5 +5,14 @@ on: push
 jobs:
 # 任务1
   job1:
+# 任务1要执行的任务
+    steps:
+    - run: pwd
+    - run: ls
+    - run: echo "Hello, World!"
 # 任务2
   job2:
+# 任务2要执行的任务
+    steps:
+    - run: node --version
+    - run: npm --version
