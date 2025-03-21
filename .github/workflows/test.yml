@@ -6,7 +6,7 @@ permissions:
   contents: write
 
 jobs:
-  name: 打包部署到github-page
+  name: 打包部署到githubPage
   build:
     runs-on: ubuntu-latest
 
