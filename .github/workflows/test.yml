@@ -6,10 +6,9 @@ permissions:
   contents: write
 
 jobs:
-  name: 打包部署到githubPage
   build:
+    name: 打包部署到github-page
     runs-on: ubuntu-latest
-
     steps:
     - name: 拉取对应分支仓库的代码🏠
       uses: actions/checkout@v4
