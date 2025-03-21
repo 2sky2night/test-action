@@ -21,5 +21,5 @@ jobs:
     - name: 部署到github-page上🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
-        BRANCH: gh-pages
+        BRANCH: gh-pages # 把打包后的文件部署到gh-pages分支，记得开启github-page
         FOLDER: build # 这里需要制定，项目打包后的文件夹
