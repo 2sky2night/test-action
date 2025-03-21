@@ -1,14 +1,25 @@
+name: 打包部署到github-page
 on: push
+
+# 可以使用 permissions 修改授予 GITHUB_TOKEN 的默认权限 https://docs.github.com/zh/actions/writing-workflows/choosing-what-your-workflow-does/controlling-permissions-for-github_token#defining-access-for-the-github_token-permissions
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # 在服务器系统上拉取本仓库的代码
-    - name: 拉取本仓库的代码
+    - name: 拉取对应分支仓库的代码🏠
       uses: actions/checkout@v4
-    - name: 安装依赖
-      run: npm install
-    - name: 打包项目文件
-      run: npm run build
+
+    - name: 安装依赖和打包项目文件📦
+      run: |
+        npm install
+        npm run build
+
+    - name: 部署到github-page上🚀
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        BRANCH: gh-pages
+        FOLDER: build # 这里需要制定，项目打包后的文件夹
