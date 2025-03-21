@@ -1,0 +1,14 @@
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 在服务器系统上拉取本仓库的代码
+    - name: 拉取本仓库的代码
+      uses: actions/checkout@v4
+    - name: 安装依赖
+      run: npm install
+    - name: 打包项目文件
+      run: npm run build
