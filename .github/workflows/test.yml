@@ -1,4 +1,4 @@
-name: 打包部署到github-page
+name: React 项目 ci 测试
 on: push
 
 # 可以使用 permissions 修改授予 GITHUB_TOKEN 的默认权限 https://docs.github.com/zh/actions/writing-workflows/choosing-what-your-workflow-does/controlling-permissions-for-github_token#defining-access-for-the-github_token-permissions
@@ -6,6 +6,7 @@ permissions:
   contents: write
 
 jobs:
+  name: 打包部署到github-page
   build:
     runs-on: ubuntu-latest
 
